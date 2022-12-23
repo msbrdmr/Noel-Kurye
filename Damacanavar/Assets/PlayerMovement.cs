@@ -4,86 +4,103 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed;
-    public float jumpForce;
+    public float moveSpeed = 5f;
+    public float jumpForce = 10f;
+    public float wallSlideSpeed = 3f;
 
-    public int jumpsAmount;
-    int jumpsLeft;
-    public Transform GroundCheck;
-    public LayerMask GroundLayer;
+    public Transform groundCheck;
+    public LayerMask groundLayer;
 
-    bool isGrounded;
+    public bool isGrounded;
+    public bool isTouchingWall;
+    public bool isWallSliding;
 
-    float moveInput;
-    Rigidbody2D rb2d;
-    float scaleX;
-    // Start is called before the first frame update
-    void Start()
+    private Rigidbody2D rb;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
+    private bool isFacingRight = true;
+
+    private void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
-        scaleX = transform.localScale.x;
+        rb = GetComponent<Rigidbody2D>();
+        // animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        moveInput = Input.GetAxisRaw("Horizontal");
-        Jump();
+        // Check if the player is touching the ground
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
 
+        // Check if the player is touching a wall
+        isTouchingWall = Physics2D.OverlapCircle(groundCheck.position, 0.1f, LayerMask.GetMask("Wall"));
+
+        // Update the animator with the current speed
+        // animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+
+        // Update the animator with the current jump state
+        // animator.SetBool("IsJumping", !isGrounded);
+
+        // Check if the player should start wall sliding
+        if (isTouchingWall && !isGrounded && rb.velocity.y < 0)
+        {
+            isWallSliding = true;
+        }
+        else
+        {
+            isWallSliding = false;
+        }
+
+        // Update the animator with the current wall slide state
+        // animator.SetBool("IsWallSliding", isWallSliding);
+        if (Input.GetButtonDown("Jump"))
+        {
+            Jump();
+        }
     }
 
     private void FixedUpdate()
     {
-        Move();
+        // Get the horizontal input
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+
+        // Calculate the movement
+        Vector2 movement = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
+
+        // Check if the player should start wall sliding
+        if (isTouchingWall && !isGrounded && rb.velocity.y < 0)
+        {
+            movement.x = 0f;
+            movement.y = -wallSlideSpeed;
+        }
+
+        // Apply the movement to the rigidbody
+        rb.velocity = movement;
+
+        // Flip the sprite if the player is moving horizontally
+        if (horizontalInput > 0 && !isFacingRight)
+        {
+            FlipSprite();
+        }
+        else if (horizontalInput < 0 && isFacingRight)
+        {
+            FlipSprite();
+        }
     }
 
-    public void Move()
+    private void FlipSprite()
     {
-        Flip();
-        rb2d.velocity = new Vector2(moveInput * moveSpeed * Time.fixedDeltaTime, rb2d.velocity.y);
-    }
-
-    public void Flip()
-    {
-        if (moveInput > 0)
-        {
-            transform.localScale = new Vector3(scaleX, transform.localScale.y, transform.localScale.z);
-        }
-        if (moveInput < 0)
-        {
-            transform.localScale = new Vector3((-1) * scaleX, transform.localScale.y, transform.localScale.z);
-        }
+        isFacingRight = !isFacingRight;
+        spriteRenderer.flipX = !spriteRenderer.flipX;
     }
 
     public void Jump()
     {
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        // Check if the player is able to jump
+        if (isGrounded || isWallSliding)
         {
-            CheckIfGrounded();
-            if (jumpsLeft > 0)
-            {
-                rb2d.velocity = new Vector2(rb2d.velocity.x, jumpForce * Time.deltaTime);
-                jumpsLeft--;
-            }
-
-        }
-
-    }
-
-    public void CheckIfGrounded()
-    {
-        isGrounded = Physics2D.OverlapCircle(GroundCheck.position, GroundCheck.GetComponent<CircleCollider2D>().radius, GroundLayer);
-        ResetJumps();
-    }
-
-    public void ResetJumps()
-    {
-        if (isGrounded)
-        {
-            jumpsLeft = jumpsAmount;// jumpsAmount =2;
+            // Add a force to the player's rigidbody to make them jump
+            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
     }
-
-
 }
