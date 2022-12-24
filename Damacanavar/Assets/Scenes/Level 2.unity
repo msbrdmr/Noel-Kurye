@@ -391,11 +391,8 @@ MonoBehaviour:
   - {fileID: 1745119207736321119, guid: 999e196a2ad9c2040a20d4e368d66a8b, type: 3}
   - {fileID: 815872535731949307, guid: da33e40e862e1c1449ac46925ba93f64, type: 3}
   - {fileID: 6362819775267886819, guid: 31555e8bb145c31498d78dffe9a2312a, type: 3}
-  - {fileID: 7770264099802099095, guid: 536d6f1161e6ab34b876341e14692fbe, type: 3}
-  - {fileID: 7770264099802099095, guid: 536d6f1161e6ab34b876341e14692fbe, type: 3}
-  - {fileID: 6362819775267886819, guid: 31555e8bb145c31498d78dffe9a2312a, type: 3}
   houseObjList: []
-  speed: 5
+  speed: 1
   screenWidth: 0
 --- !u!4 &903886736
 Transform:
@@ -419,29 +416,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5521382467916594808, guid: 54b83d6e946dcaf4cbd52a9068b01db8, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5521382467916594808, guid: 54b83d6e946dcaf4cbd52a9068b01db8, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 1418863647, guid: 54b83d6e946dcaf4cbd52a9068b01db8, type: 3}
+      propertyPath: throwObject
+      value: 
+      objectReference: {fileID: 4396406938072829111}
+    - target: {fileID: 1418863647, guid: 54b83d6e946dcaf4cbd52a9068b01db8, type: 3}
+      propertyPath: directionLine
+      value: 
+      objectReference: {fileID: 37999298}
     - target: {fileID: 5521382467916594809, guid: 54b83d6e946dcaf4cbd52a9068b01db8, type: 3}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5521382467916594809, guid: 54b83d6e946dcaf4cbd52a9068b01db8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5521382467916594809, guid: 54b83d6e946dcaf4cbd52a9068b01db8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5521382467916594809, guid: 54b83d6e946dcaf4cbd52a9068b01db8, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5521382467916594809, guid: 54b83d6e946dcaf4cbd52a9068b01db8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -483,36 +468,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5521382467916594809, guid: 54b83d6e946dcaf4cbd52a9068b01db8, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5521382467916594812, guid: 54b83d6e946dcaf4cbd52a9068b01db8, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5521382467916594815, guid: 54b83d6e946dcaf4cbd52a9068b01db8, type: 3}
-      propertyPath: jumpForce
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 5521382467916594815, guid: 54b83d6e946dcaf4cbd52a9068b01db8, type: 3}
-      propertyPath: moveSpeed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 5521382467916594815, guid: 54b83d6e946dcaf4cbd52a9068b01db8, type: 3}
-      propertyPath: wallSlideSpeed
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 5521382467916594815, guid: 54b83d6e946dcaf4cbd52a9068b01db8, type: 3}
-      propertyPath: sliderLayer.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 5521382467950194184, guid: 54b83d6e946dcaf4cbd52a9068b01db8, type: 3}
-      propertyPath: m_Radius
-      value: 0.5
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5521382467916594815, guid: 54b83d6e946dcaf4cbd52a9068b01db8, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54b83d6e946dcaf4cbd52a9068b01db8, type: 3}
 --- !u!1 &1298438999
 GameObject:
@@ -545,41 +505,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1418863641 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5521382467916594812, guid: 54b83d6e946dcaf4cbd52a9068b01db8, type: 3}
-  m_PrefabInstance: {fileID: 1029896615}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1418863642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1418863641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c9e3ce8959380648ae8981c29cce3b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 120
-  smoothTime: 0.3
-  screenBounds: {x: 10, y: 5}
---- !u!114 &1418863647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1418863641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 279bbf944f8539840a655c8a792f29ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  throwObject: {fileID: 4396406938072829111}
-  directionLine: {fileID: 37999298}
-  throwStrength: 10
 --- !u!1001 &4396406938072829110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -635,10 +560,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Damacana
       objectReference: {fileID: 0}
-    - target: {fileID: 2884329000803041119, guid: b54e52a15e1f7804ea491e3f9c690835, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b54e52a15e1f7804ea491e3f9c690835, type: 3}
 --- !u!1 &4396406938072829111 stripped
@@ -646,24 +567,3 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2884329000803041119, guid: b54e52a15e1f7804ea491e3f9c690835, type: 3}
   m_PrefabInstance: {fileID: 4396406938072829110}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &4396406938072829114
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4396406938072829111}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0

@@ -18,18 +18,17 @@ public class HouseSpawner : MonoBehaviour
         GameObject newObj = Instantiate(firstHouse, startpos, Quaternion.identity);
         houseObjList = new List<GameObject>();
         houseObjList.Add(newObj);
-        Vector2 scalePrev = firstHouse.transform.localScale;
+        float scalePrev = firstHouse.GetComponent<SpriteRenderer>().bounds.size.x;
         Vector2 posPrev = startpos;
 
-        for (int i = 1; i < houseList.Count; i++)
+        for (int i = 1; i < 12; i++)
         {
             GameObject newHouse = getHouse();
-            float newXPos = posPrev.x + scalePrev.x / 2 + (newHouse.transform.localScale.x / 2);
+            float newXPos = posPrev.x + scalePrev / 2 + (newHouse.GetComponent<SpriteRenderer>().bounds.size.x / 2);
             GameObject newObj1 = Instantiate(newHouse, new Vector2(newXPos, posPrev.y), Quaternion.identity);
-            scalePrev = newHouse.transform.localScale;
+            scalePrev = newHouse.GetComponent<SpriteRenderer>().bounds.size.x;
             posPrev = new Vector2(newXPos, posPrev.y);
             houseObjList.Add(newObj1);
-
         }
     }
 
@@ -43,14 +42,14 @@ public class HouseSpawner : MonoBehaviour
 
         // Check if any house has moved out of the left side of the screen
         GameObject leftmostHouse = houseObjList[0];
-        float leftmostXPos = leftmostHouse.transform.position.x - leftmostHouse.transform.localScale.x / 2;
-        if (leftmostXPos < -screenWidth - leftmostHouse.transform.localScale.x)
+        float leftmostXPos = leftmostHouse.transform.position.x - leftmostHouse.GetComponent<SpriteRenderer>().bounds.size.x / 2;
+        if (leftmostXPos < -screenWidth - leftmostHouse.GetComponent<SpriteRenderer>().bounds.size.x)
         {
             // Remove the leftmost house from the list
             houseObjList.RemoveAt(0);
 
             // Move the leftmost house to the right side of the screen
-            float newXPos = houseObjList[houseObjList.Count - 1].transform.position.x + leftmostHouse.transform.localScale.x / 2 + houseObjList[houseObjList.Count - 1].transform.localScale.x / 2;
+            float newXPos = houseObjList[houseObjList.Count - 1].transform.position.x + leftmostHouse.GetComponent<SpriteRenderer>().bounds.size.x + houseObjList[houseObjList.Count - 1].transform.localScale.x / 2;
             Vector2 newPos = new Vector2(newXPos, startpos.y);
             leftmostHouse.transform.position = newPos;
 
