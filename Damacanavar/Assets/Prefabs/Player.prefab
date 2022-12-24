@@ -142,7 +142,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5521382467916594812}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf97b394b54be954e8750bd1a923a5a3, type: 3}
   m_Name: 
@@ -153,8 +153,12 @@ MonoBehaviour:
   groundCheck: {fileID: 5521382467950194185}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
+  sliderLayer:
+    serializedVersion: 2
+    m_Bits: 256
   isGrounded: 0
+  isOnSlider: {fileID: 0}
   isTouchingWall: 0
   isWallSliding: 0
 --- !u!1 &5521382467950194190

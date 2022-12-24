@@ -5,13 +5,15 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public float jumpForce = 10f;
+    public float jumpForce = 3f;
     public float wallSlideSpeed = 3f;
 
     public Transform groundCheck;
     public LayerMask groundLayer;
+    public LayerMask sliderLayer;
 
     public bool isGrounded;
+    public Collider2D isOnSlider;
     public bool isTouchingWall;
     public bool isWallSliding;
 
@@ -19,21 +21,23 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private bool isFacingRight = true;
+    private CircleCollider2D groundCollider;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         // animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        groundCollider = groundCheck.GetComponent<CircleCollider2D>();
     }
 
     private void Update()
     {
         // Check if the player is touching the ground
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
-
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCollider.radius, groundLayer);
+        isOnSlider = Physics2D.OverlapCircle(groundCheck.position, groundCollider.radius, sliderLayer);
         // Check if the player is touching a wall
-        isTouchingWall = Physics2D.OverlapCircle(groundCheck.position, 0.1f, LayerMask.GetMask("Wall"));
+        isTouchingWall = Physics2D.OverlapCircle(groundCheck.position, groundCollider.radius, LayerMask.GetMask("Wall"));
 
         // Update the animator with the current speed
         // animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
@@ -57,6 +61,16 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
         }
+
+        if (isOnSlider)
+        {
+            Debug.Log("here");
+            transform.SetParent(isOnSlider.gameObject.transform);
+        }
+        else
+        {
+            transform.SetParent(null);
+        }
     }
 
     private void FixedUpdate()
@@ -65,13 +79,13 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal");
 
         // Calculate the movement
-        Vector2 movement = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
+        Vector2 movement = new Vector2(horizontalInput * moveSpeed * Time.fixedDeltaTime, rb.velocity.y);
 
         // Check if the player should start wall sliding
         if (isTouchingWall && !isGrounded && rb.velocity.y < 0)
         {
             movement.x = 0f;
-            movement.y = -wallSlideSpeed;
+            movement.y = -wallSlideSpeed * Time.fixedDeltaTime;
         }
 
         // Apply the movement to the rigidbody
@@ -100,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded || isWallSliding)
         {
             // Add a force to the player's rigidbody to make them jump
-            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0f, jumpForce * Time.deltaTime), ForceMode2D.Impulse);
         }
     }
 }
