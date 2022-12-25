@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -11,30 +12,44 @@ public class GameManager : MonoBehaviour
     {
         get
         {
-            if (instance == null)
-            {
-                instance = new GameObject("GameManager").AddComponent<GameManager>();
-            }
+            // if (instance == null)
+            // {
+            //     instance = new GameObject("GameManager").AddComponent<GameManager>();
+            // }
             return instance;
         }
     }
 
     private void OnEnable()
     {
-        instance = this;
+
     }
 
     #endregion
 
+    [SerializeField] private Text btnText;
     public bool isSoundOn = true;
+    public bool isMusicOn = true;
     public int goldAmount = 0;
 
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
-
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+    }
+    private void Start()
+    {
         int isSoundOnInt = PlayerPrefs.GetInt("isSoundOn", 1);
+        int isMusicOnInt = PlayerPrefs.GetInt("isMusicOn", 1);
         isSoundOn = isSoundOnInt == 0 ? false : true;
+        isMusicOn = isMusicOnInt == 0 ? false : true;
     }
 
     public void LoadGameScene()
@@ -59,5 +74,17 @@ public class GameManager : MonoBehaviour
     public void setMusicVolume(float volume)
     {
         PlayerPrefs.SetFloat("musicVolume", volume);
+    }
+
+
+
+    public void LoadSettingsScene()
+    {
+        SceneManager.LoadScene("Settings");
+    }
+
+    public void LoadMenuScreen()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }

@@ -29,6 +29,7 @@ public class AudioManager : MonoBehaviour
             PlayerPrefs.SetFloat("musicVolume", musicSource.volume);
 
         StartCoroutine(PlayReplik());
+        if (!GameManager.Instance.isMusicOn) return;
         musicSource.clip = backgroundMusic;
         musicSource.Play();
     }
@@ -48,6 +49,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayRandomReplik()
     {
+        if (!GameManager.Instance.isSoundOn) return;
         int rnd = Random.Range(0, replikler.Count);
         AudioClip replik = replikler[rnd];
 
@@ -55,6 +57,7 @@ public class AudioManager : MonoBehaviour
     }
     public void PlayRandomDamacanaReplik()
     {
+        if (!GameManager.Instance.isSoundOn) return;
         if (audioSource.isPlaying)
             return;
 
@@ -68,12 +71,14 @@ public class AudioManager : MonoBehaviour
 
     public void PlayRandomIkinma()
     {
+        if (!GameManager.Instance.isSoundOn) return;
         int rnd = Random.Range(0, ikinmaSesleri.Count);
         AudioClip replik = ikinmaSesleri[rnd];
         audioSource.PlayOneShot(replik, audioSource.volume / 2);
     }
     public void PlayRandomFirlatma()
     {
+        if (!GameManager.Instance.isSoundOn) return;
         int rnd = Random.Range(0, damacanaFirlatmaSesleri.Count);
         AudioClip replik = damacanaFirlatmaSesleri[rnd];
         audioSource.PlayOneShot(replik, audioSource.volume / 2);
