@@ -20,6 +20,9 @@ public class Collision : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        FindObjectOfType<AudioManager>().PlayRandomFirlatma();
+        FindObjectOfType<AudioManager>().PlayRandomDamacanaReplik();
     }
     private void FixedUpdate()
     {

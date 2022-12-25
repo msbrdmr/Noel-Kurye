@@ -51,4 +51,13 @@ public class GameManager : MonoBehaviour
     {
         goldAmount += 1;
     }
+
+    public void setAudioVolume(float volume)
+    {
+        PlayerPrefs.SetFloat("audioVolume", volume);
+    }
+    public void setMusicVolume(float volume)
+    {
+        PlayerPrefs.SetFloat("musicVolume", volume);
+    }
 }

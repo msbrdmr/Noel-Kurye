@@ -24,6 +24,8 @@ public class Throw : MonoBehaviour
             // Start drawing the direction line
             directionLine.enabled = true;
         // }
+
+        FindObjectOfType<AudioManager>().PlayRandomIkinma();
     }
 
     void OnMouseUp()
