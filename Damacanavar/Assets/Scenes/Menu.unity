@@ -136,9 +136,10 @@ GameObject:
   - component: {fileID: 155217454}
   - component: {fileID: 155217453}
   - component: {fileID: 155217452}
+  - component: {fileID: 155217457}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,7 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 155217453}
   playerSpeed: 20
-  jumpForce: 2000
+  jumpForce: 5000
 --- !u!50 &155217453
 Rigidbody2D:
   serializedVersion: 4
@@ -178,7 +179,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &155217454
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -192,18 +193,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.00000011920929, y: 0.009438992}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.91, y: 2.86}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.622988, y: 2.8312082}
   m_EdgeRadius: 0
 --- !u!212 &155217455
 SpriteRenderer:
@@ -246,7 +247,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 2071370157, guid: 8a49670ac8ee800499ec70ed045b89de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -265,13 +266,33 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155217451}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.19, y: 1.19, z: -1.96}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -6.4764, y: 3.767, z: -1.96}
+  m_LocalScale: {x: 0.7001, y: 0.7001, z: 0.7001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &155217457
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155217451}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ea4b8a76140820a4f8be8bee4347a911, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &240306060
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +351,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8c7c0d565fa10e24db5568f78628622c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 27c8319a15adf0e4a9538207762a44d6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -432,9 +453,10 @@ GameObject:
   - component: {fileID: 463980247}
   - component: {fileID: 463980246}
   - component: {fileID: 463980248}
+  - component: {fileID: 463980249}
   m_Layer: 0
   m_Name: Options-White
-  m_TagString: Untagged
+  m_TagString: SETTINGS
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -498,14 +520,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463980245}
-  m_LocalRotation: {x: -0, y: -0, z: -0.08513669, w: 0.9963693}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.49, y: -2.21, z: -4.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -9.768}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &463980248
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -532,6 +554,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 4}
   m_EdgeRadius: 0
+--- !u!114 &463980249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463980245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7ab0095d42ad2d40935d517b0eae733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 155217451}
+  playBox: {fileID: 932425358}
+  settingsBox: {fileID: 463980245}
+  quitBox: {fileID: 1712327716}
+  playWhite: {fileID: 21300000, guid: 06d0406ed42a48c4c8fcc69e02242788, type: 3}
+  playBlack: {fileID: 21300000, guid: 547958c29f5489547adb75457214a9c4, type: 3}
+  settingsWhite: {fileID: 21300000, guid: 72fafed362527a5409f0c57703ce38e8, type: 3}
+  settingsBlack: {fileID: 21300000, guid: 0ab620722a1e00e47a4181434efd10a7, type: 3}
+  quitWhite: {fileID: 21300000, guid: 0329355583a2eaa4fba8e85c3c1d8275, type: 3}
+  quitblack: {fileID: 21300000, guid: 0050c0ac7258fe44aa2103f1b85f7401, type: 3}
 --- !u!1 &932425358
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,9 +587,10 @@ GameObject:
   - component: {fileID: 932425360}
   - component: {fileID: 932425359}
   - component: {fileID: 932425361}
+  - component: {fileID: 932425362}
   m_Layer: 0
   m_Name: Play-White
-  m_TagString: Untagged
+  m_TagString: PLAY
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -609,14 +654,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 932425358}
-  m_LocalRotation: {x: -0, y: -0, z: 0.074199654, w: 0.99724346}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.76, y: -2.07, z: -4.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 8.51}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &932425361
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -643,6 +688,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 4}
   m_EdgeRadius: 0
+--- !u!114 &932425362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932425358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7ab0095d42ad2d40935d517b0eae733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 155217451}
+  playBox: {fileID: 932425358}
+  settingsBox: {fileID: 463980245}
+  quitBox: {fileID: 1712327716}
+  playWhite: {fileID: 21300000, guid: 06d0406ed42a48c4c8fcc69e02242788, type: 3}
+  playBlack: {fileID: 21300000, guid: 547958c29f5489547adb75457214a9c4, type: 3}
+  settingsWhite: {fileID: 21300000, guid: 72fafed362527a5409f0c57703ce38e8, type: 3}
+  settingsBlack: {fileID: 21300000, guid: 0ab620722a1e00e47a4181434efd10a7, type: 3}
+  quitWhite: {fileID: 21300000, guid: 0329355583a2eaa4fba8e85c3c1d8275, type: 3}
+  quitblack: {fileID: 21300000, guid: 0050c0ac7258fe44aa2103f1b85f7401, type: 3}
 --- !u!1 &1232100118
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,7 +852,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c7274c59acebfcf45985ebdbf7603abe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 745d137eb1d91ae4a87325ae7813a999, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -804,7 +871,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1435964850}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -888,7 +955,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580394132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.004102707, y: 0.07801634, z: -5.7}
+  m_LocalPosition: {x: -0.004102707, y: -0.02, z: -5.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -951,9 +1018,10 @@ GameObject:
   - component: {fileID: 1712327718}
   - component: {fileID: 1712327717}
   - component: {fileID: 1712327719}
+  - component: {fileID: 1712327720}
   m_Layer: 0
   m_Name: "Qu\u0131it-White"
-  m_TagString: Untagged
+  m_TagString: QUIT
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1017,14 +1085,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712327716}
-  m_LocalRotation: {x: -0, y: -0, z: 0.11702333, w: 0.9931292}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.39, y: -1.86, z: -4.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 13.441}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1712327719
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1051,3 +1119,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 4}
   m_EdgeRadius: 0
+--- !u!114 &1712327720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712327716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7ab0095d42ad2d40935d517b0eae733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 155217451}
+  playBox: {fileID: 932425358}
+  settingsBox: {fileID: 463980245}
+  quitBox: {fileID: 1712327716}
+  playWhite: {fileID: 21300000, guid: 06d0406ed42a48c4c8fcc69e02242788, type: 3}
+  playBlack: {fileID: 21300000, guid: 547958c29f5489547adb75457214a9c4, type: 3}
+  settingsWhite: {fileID: 21300000, guid: 72fafed362527a5409f0c57703ce38e8, type: 3}
+  settingsBlack: {fileID: 21300000, guid: 0ab620722a1e00e47a4181434efd10a7, type: 3}
+  quitWhite: {fileID: 21300000, guid: 0329355583a2eaa4fba8e85c3c1d8275, type: 3}
+  quitblack: {fileID: 21300000, guid: 0050c0ac7258fe44aa2103f1b85f7401, type: 3}

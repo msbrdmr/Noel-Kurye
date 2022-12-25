@@ -14,11 +14,11 @@ public class MenuAnimations : MonoBehaviour
     }
 
     private void Update() {
-        Debug.Log((lastChecked+waitFor) + " -- " + Time.time + " -- " + lastChecked);
+        // Debug.Log((lastChecked+waitFor) + " -- " + Time.time + " -- " + lastChecked);
         if(lastChecked + waitFor <= Time.time)
         {
             waitFor = Random.Range(0.1f, 0.01f);
-            if(Random.Range(1, 100) <= 3) waitFor = 1f;
+            if(Random.Range(1, 100) <= 20) waitFor = 1f;
             lastChecked = Time.time;
             ToggleWhiteLetters();
         }
