@@ -19,7 +19,7 @@ public class HouseSpawner : MonoBehaviour
         houseObjList = new List<GameObject>();
         houseObjList.Add(newObj);
         float scalePrev = firstHouse.GetComponent<SpriteRenderer>().bounds.size.x;
-        Vector2 posPrev = startpos;
+        Vector2 posPrev = new Vector2(startpos.x + Random.Range(1f, 3f), startpos.y);
 
         for (int i = 1; i < 12; i++)
         {
@@ -27,17 +27,17 @@ public class HouseSpawner : MonoBehaviour
             float newXPos = posPrev.x + scalePrev / 2 + (newHouse.GetComponent<SpriteRenderer>().bounds.size.x / 2);
             GameObject newObj1 = Instantiate(newHouse, new Vector2(newXPos, posPrev.y), Quaternion.identity);
             scalePrev = newHouse.GetComponent<SpriteRenderer>().bounds.size.x;
-            posPrev = new Vector2(newXPos, posPrev.y);
+            posPrev = new Vector2(newXPos + Random.Range(1f, 3f), posPrev.y);
             houseObjList.Add(newObj1);
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         // Move all houses to the left
         foreach (GameObject house in houseObjList)
         {
-            house.transform.position += Vector3.left * speed * Time.deltaTime;
+            house.transform.position += Vector3.left * speed * Time.fixedDeltaTime;
         }
 
         // Check if any house has moved out of the left side of the screen
@@ -49,8 +49,8 @@ public class HouseSpawner : MonoBehaviour
             houseObjList.RemoveAt(0);
 
             // Move the leftmost house to the right side of the screen
-            float newXPos = houseObjList[houseObjList.Count - 1].transform.position.x + leftmostHouse.GetComponent<SpriteRenderer>().bounds.size.x + houseObjList[houseObjList.Count - 1].transform.localScale.x / 2;
-            Vector2 newPos = new Vector2(newXPos, startpos.y);
+            float newXPos = houseObjList[houseObjList.Count - 1].transform.position.x + houseObjList[houseObjList.Count - 1].transform.localScale.x / 2;
+            Vector2 newPos = new Vector2(newXPos + leftmostHouse.GetComponent<SpriteRenderer>().bounds.size.x + Random.Range(-1f, 3f), startpos.y);
             leftmostHouse.transform.position = newPos;
 
             // Add the leftmost house back to the list

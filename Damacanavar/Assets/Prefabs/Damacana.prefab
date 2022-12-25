@@ -11,14 +11,15 @@ GameObject:
   - component: {fileID: 1111399701840265205}
   - component: {fileID: 9129028752975665606}
   - component: {fileID: 4396406938072829118}
-  - component: {fileID: 1165367629265448776}
+  - component: {fileID: 8301950511804600160}
+  - component: {fileID: 5297740834603846484}
   m_Layer: 10
   m_Name: Damacana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1111399701840265205
 Transform:
   m_ObjectHideFlags: 0
@@ -98,8 +99,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c8f59f49edd694eaed15bd1b0be48d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!70 &1165367629265448776
-CapsuleCollider2D:
+  multiplier: 15
+--- !u!50 &8301950511804600160
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2884329000803041119}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: 05dd15db73538924a9781e26bd665bc6, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &5297740834603846484
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -111,6 +134,16 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 3.0399997, y: 5.7399993}
-  m_Direction: 0
+  m_Offset: {x: 0, y: -0.011246204}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.04, y: 5.74}
+    newSize: {x: 3.04, y: 5.74}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.04, y: 5.7175074}
+  m_EdgeRadius: 0

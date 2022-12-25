@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5555106558203793754}
   - component: {fileID: 5080752325842184379}
   - component: {fileID: 7408223820372232964}
+  - component: {fileID: -3067709980447521920}
   m_Layer: 0
   m_Name: house
   m_TagString: Untagged
@@ -145,7 +146,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.9038267, y: 2.942523}
+  m_Offset: {x: 1.8931925, y: 2.942523}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -156,5 +157,26 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3726296, y: 0.08176708}
+  m_Size: {x: 1.1811953, y: 0.08176708}
   m_EdgeRadius: 0
+--- !u!50 &-3067709980447521920
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745119207736321119}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: 05dd15db73538924a9781e26bd665bc6, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
