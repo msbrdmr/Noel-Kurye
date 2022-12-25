@@ -10,6 +10,7 @@ public class Collision : MonoBehaviour
     public ParticleSystem particle;
     private void OnCollisionEnter2D(Collision2D other)
     {
+        if (other.gameObject.CompareTag(tag)) return;
         if (other.collider.GetType() == typeof(UnityEngine.BoxCollider2D))
         {
             Destroy(gameObject);

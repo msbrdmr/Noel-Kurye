@@ -2167,18 +2167,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Damacana
       objectReference: {fileID: 0}
-    - target: {fileID: 4396406938072829118, guid: b54e52a15e1f7804ea491e3f9c690835, type: 3}
-      propertyPath: multiplier
-      value: 7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8301950511804600160, guid: b54e52a15e1f7804ea491e3f9c690835, type: 3}
-      propertyPath: m_AngularDrag
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 9129028752975665606, guid: b54e52a15e1f7804ea491e3f9c690835, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 1121977225, guid: 62508eb4803a5324487c4f8e66d07fbc, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b54e52a15e1f7804ea491e3f9c690835, type: 3}
 --- !u!1 &4396406938072829111 stripped

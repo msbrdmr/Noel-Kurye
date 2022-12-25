@@ -102,7 +102,7 @@ public class BoxPush2 : MonoBehaviour
             switch (this.gameObject.tag)
             {
                 case "PLAY":
-                    GameManager.Instance.LoadGameScene();
+                    GameManager.Instance.LoadIntroScene();
                     break;
                 case "SETTINGS":
                     break;

@@ -31,11 +31,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != this)
-        {
-            Destroy(this.gameObject);
-            return;
-        }
         DontDestroyOnLoad(this.gameObject);
 
         int isSoundOnInt = PlayerPrefs.GetInt("isSoundOn", 1);
@@ -45,6 +40,11 @@ public class GameManager : MonoBehaviour
     public void LoadGameScene()
     {
         SceneManager.LoadScene("Level 2");
+    }
+
+    public void LoadIntroScene()
+    {
+        SceneManager.LoadScene("Level 1");
     }
 
     public void IncreaseGold()

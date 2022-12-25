@@ -7,6 +7,7 @@ TagManager:
   - PLAY
   - SETTINGS
   - QUIT
+  - Damacana
   layers:
   - Default
   - TransparentFX

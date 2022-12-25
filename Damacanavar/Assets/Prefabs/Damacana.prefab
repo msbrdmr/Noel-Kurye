@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5297740834603846484}
   m_Layer: 10
   m_Name: Damacana
-  m_TagString: Untagged
+  m_TagString: Damacana
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 293087775, guid: e0381f7a0a1c5eb4daea6459630d7f98, type: 3}
+  m_Sprite: {fileID: 1121977225, guid: 62508eb4803a5324487c4f8e66d07fbc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6117647}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c8f59f49edd694eaed15bd1b0be48d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplier: 15
+  multiplier: 7.5
+  particle: {fileID: 0}
 --- !u!50 &8301950511804600160
 Rigidbody2D:
   serializedVersion: 4
@@ -114,7 +115,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 10
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 05dd15db73538924a9781e26bd665bc6, type: 2}
   m_Interpolate: 0
@@ -138,7 +139,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.04, y: 5.74}
+    oldSize: {x: 1.15, y: 1.82}
     newSize: {x: 3.04, y: 5.74}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
