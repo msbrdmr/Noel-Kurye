@@ -47,6 +47,7 @@ public class PlayerMovementMenu : MonoBehaviour
         if(transform.position.y <= -3f)
         {
             transform.position = startingPos + Vector3.up;
+            rb.velocity = Vector2.zero;
         }
     }
 }
