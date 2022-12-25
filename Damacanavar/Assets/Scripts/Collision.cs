@@ -13,6 +13,7 @@ public class Collision : MonoBehaviour
         if (other.collider.GetType() == typeof(UnityEngine.BoxCollider2D))
         {
             Destroy(gameObject);
+            FindObjectOfType<GoldUpdater>().UpdateGoldText();
         }
 
     }
