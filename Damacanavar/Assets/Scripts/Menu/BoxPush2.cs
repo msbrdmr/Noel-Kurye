@@ -105,8 +105,10 @@ public class BoxPush2 : MonoBehaviour
                     GameManager.Instance.LoadIntroScene();
                     break;
                 case "SETTINGS":
+                    GameManager.Instance.LoadSettingsScene();
                     break;
                 case "QUIT":
+                    Application.Quit();
                     break;
                 default:
                     break;
