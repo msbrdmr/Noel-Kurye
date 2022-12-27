@@ -20,6 +20,8 @@ public class Presentscript : MonoBehaviour
         if (GameManager.Instance.goldAmount >= presentPrice)
         {
             GameManager.Instance.goldAmount -= presentPrice;
+            FindObjectOfType<GoldUpdater>().UpdateGoldTextt();
+
             presentCount++;
             presentText.text = presentCount.ToString();
         }

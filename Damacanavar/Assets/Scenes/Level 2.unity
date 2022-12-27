@@ -1385,7 +1385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a38e8099834ce4ea441bbc3746fc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundMusic: {fileID: 8300000, guid: 1fe20a03f4fb03547a615d291e3dfefd, type: 3}
+  backgroundMusic: {fileID: 8300000, guid: 7326ac9c3d6871e40a1d565f087ee4f1, type: 3}
   replikler:
   - {fileID: 8300000, guid: b781d90dc2cac1049982a58fa19a61f7, type: 3}
   - {fileID: 8300000, guid: 418febfb62723fe468dc86a2def373f6, type: 3}
@@ -2727,7 +2727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2039983510
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3050,6 +3050,10 @@ PrefabInstance:
     - target: {fileID: 2884329000803041119, guid: b54e52a15e1f7804ea491e3f9c690835, type: 3}
       propertyPath: m_Name
       value: Damacana
+      objectReference: {fileID: 0}
+    - target: {fileID: 2884329000803041119, guid: b54e52a15e1f7804ea491e3f9c690835, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b54e52a15e1f7804ea491e3f9c690835, type: 3}

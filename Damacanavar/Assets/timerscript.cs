@@ -6,20 +6,52 @@ using UnityEngine.UI;
 public class timerscript : MonoBehaviour
 {
     public Text timeText;
-    System.TimeSpan currentTime;
+    private int current = 86280;
     private void Start()
     {
-        currentTime = new System.TimeSpan(23, 58, 00);
+        StartCoroutine(InceaseTime());
     }
 
     void Update()
     {
-        // Calculate the time remaining until 00:00:00
-        System.TimeSpan timeHedef = new System.TimeSpan(23, 59, 59);
-        System.TimeSpan timeRemaining = timeHedef - currentTime;
-        currentTime.Add(new System.TimeSpan(0, 0, 1));
-        // Update the text of the UI element
-        timeText.text = string.Format("{0:00}:{1:00}:{2:00}", timeRemaining.Hours, timeRemaining.Minutes, timeRemaining.Seconds);
+        // // Calculate the time remaining until 00:00:00
+        // System.TimeSpan timeHedef = new System.TimeSpan(23, 59, 59);
+        // System.TimeSpan timeRemaining = timeHedef - currentTime;
+        // currentTime.Add(new System.TimeSpan(0, 0, 1));
+        // // Update the text of the UI element
+        // timeText.text = string.Format("{0:00}:{1:00}:{2:00}", timeRemaining.Hours, timeRemaining.Minutes, timeRemaining.Seconds);
     }
 
+    IEnumerator InceaseTime()
+    {
+        while (true)
+        {
+            yield return new WaitForSecondsRealtime(1);
+            Debug.Log("adasd");
+            current++;
+            asdd();
+        }
+
+    }
+
+    public void asdd()
+    {
+        var hours = current / 60 / 60;
+        var x = current - (hours * 60);
+
+        var min = x / 60 / 60;
+
+        x = x - (min * 60);
+
+        var sec = x;
+
+
+        timeText.text = string.Format("{0:00}:{1:00}:{2:00}", hours, min, sec);
+        Debug.Log(timeText.text);
+
+
+
+
+
+    }
 }

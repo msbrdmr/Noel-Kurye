@@ -13,4 +13,7 @@ public class GoldUpdater : MonoBehaviour
         GameManager.Instance.IncreaseGold();
         goldText.text = GameManager.Instance.goldAmount.ToString();
     }
+    public void UpdateGoldTextt() {
+        goldText.text = GameManager.Instance.goldAmount.ToString();
+    }
 }

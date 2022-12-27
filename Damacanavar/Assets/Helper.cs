@@ -6,7 +6,6 @@ public class Helper : MonoBehaviour
 {
     public void LoadGameScene()
     {
-        Debug.Log("Annen");
         GameManager.Instance.LoadGameScene();
     }
 }
