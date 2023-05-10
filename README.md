@@ -5,7 +5,7 @@ Objects: Santa Claus and water jug
 
 Santa Claus, who could not distribute gifts because he ran out of money and could not bring back Christmas as children were left without gifts, starts to earn money.
 
-Graphic design: rabia çalık
+Graphic design: rabia çalık\n
 Sound and Music: Enes Osmanoğlu
 Developers: Samet Ataç, Musab Erdemir, Enes Osmanoğlu
 Game page: https://lnkd.in/dRqgp_Qm
